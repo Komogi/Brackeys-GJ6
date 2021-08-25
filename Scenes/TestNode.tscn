@@ -1,5 +1,0 @@
-[gd_scene format=2]
-
-[node name="TestNode" type="Node"]
-
-[node name="TestChildNode" type="Node" parent="."]
