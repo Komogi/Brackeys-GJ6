@@ -1,4 +1,5 @@
 extends KinematicBody2D
+class_name Player
 
 const ACCELERATION = 800
 const MAX_SPEED = 250
@@ -18,3 +19,6 @@ func _physics_process(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	
 	velocity = move_and_slide(velocity)
+
+	if Input.is_action_just_pressed("interact"):
+		print("j pressed")
