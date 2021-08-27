@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Interactable/InteractableItem.gd"
 }, {
+"base": "Control",
+"class": "InteractionComponentUI",
+"language": "GDScript",
+"path": "res://Player/InteractionComponentUI.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
@@ -21,6 +26,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "InteractableItem": "",
+"InteractionComponentUI": "",
 "Player": ""
 }
 

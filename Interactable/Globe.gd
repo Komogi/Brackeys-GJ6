@@ -10,7 +10,7 @@ func interaction_can_interact(interactionComponentParent : Node) -> bool:
 #	pass
 
 func interaction_get_text() -> String:
-	return "Open"
+	return "Press J"
 
 func interaction_interact(interactionComponentParent : Node) -> void:
 	print("Globe touched")
