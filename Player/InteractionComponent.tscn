@@ -4,6 +4,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
+radius = 17.2861
 height = 0.0
 
 [node name="InteractionComponent" type="Area2D"]

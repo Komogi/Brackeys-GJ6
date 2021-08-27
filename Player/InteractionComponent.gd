@@ -9,9 +9,6 @@ var interaction_target : Node
 # Called every frame
 func _process(delta):
 	# Check whether the player is trying to interact
-	#if (interaction_target != null):
-	#	print("target on")
-		
 	if (interaction_target != null and Input.is_action_just_pressed("interact")):
 		# If so, we'll call interaction_interact() if our target supports it
 		if (interaction_target.has_method("interaction_interact")):
@@ -21,17 +18,13 @@ func _process(delta):
 # Signal triggered when our collider collides with something on the interaction layer
 func _on_InteractionComponent_body_entered(body):
 	var canInteract := false
-	#print("interaction_entered")
 	
 	# GDScript lacks the concept of interfaces, so we can't check whether the body implements an interface
 	# Instead, we'll see if it has the methods we need
 	#print(body.has_method("interaction_can_interact"))
 	if (body.has_method("interaction_can_interact")):
 		# Interactables tell us whether we're allowed to interact with them.
-		print("before", canInteract)
-		print("parent", interaction_parent)
 		canInteract = body.interaction_can_interact(get_node(interaction_parent))
-		print("after", canInteract)
 	
 	if not canInteract:
 		return
@@ -42,7 +35,6 @@ func _on_InteractionComponent_body_entered(body):
 
 
 func _on_InteractionComponent_body_exited(body):
-	print("interaction_exited")
 	if (body == interaction_target):
 		interaction_target = null
 		emit_signal("on_interactable_changed", null)
