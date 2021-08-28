@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/kitchen_tileset.png-ebbcd1f73d5910cfcebb86bcc01763bf.stex"
+path="res://.import/Modern_Office_Black_Shadow.png-73661fdf16596e42c74a89823d2c00fc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Tiles/kitchen_tileset.png"
-dest_files=[ "res://.import/kitchen_tileset.png-ebbcd1f73d5910cfcebb86bcc01763bf.stex" ]
+source_file="res://Sprites/Tiles/Modern_Office_Black_Shadow.png"
+dest_files=[ "res://.import/Modern_Office_Black_Shadow.png-73661fdf16596e42c74a89823d2c00fc.stex" ]
 
 [params]
 
