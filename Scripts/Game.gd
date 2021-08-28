@@ -12,6 +12,9 @@ func _process(delta: float) -> void:
 	#print(MainCamera.position) # For Debugging
 	pass
 
+func _on_Start_pressed() -> void:
+	get_tree().change_scene("res://Scenes/GameScreen.tscn")
+
 func _on_HowToPlay_pressed() -> void:
 	TweenNode.interpolate_property(MainCamera, "position", MainCamera.position, 
 		$HowToPlayContainer.position, 0.8, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
