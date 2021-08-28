@@ -16,7 +16,7 @@ __meta__ = {
 }
 interaction_component_nodepath = NodePath(".")
 interaction_texture_nodepath = NodePath("HBoxContainer/TextureRect")
-interaction_text_nodepath = NodePath("HBoxContainer/RichTextLabel")
+interaction_text_nodepath = NodePath("HBoxContainer/Label")
 interaction_default_texture = ExtResource( 3 )
 interaction_default_text = "Interact"
 
@@ -32,12 +32,10 @@ margin_right = 32.0
 margin_bottom = 40.0
 texture = ExtResource( 3 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer"]
 margin_left = 36.0
-margin_right = 36.0
-margin_bottom = 40.0
-custom_fonts/mono_font = SubResource( 1 )
+margin_top = 12.0
+margin_right = 93.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 1 )
 text = "Interact"
-__meta__ = {
-"_edit_use_anchors_": false
-}
