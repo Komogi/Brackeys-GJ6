@@ -9,7 +9,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(MainCamera.position)
+	#print(MainCamera.position) # For Debugging
+	pass
 
 func _on_HowToPlay_pressed() -> void:
 	TweenNode.interpolate_property(MainCamera, "position", MainCamera.position, 
