@@ -16,7 +16,7 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.3, 0.3 )
+scale = Vector2( 0.36914, 0.369141 )
 texture = ExtResource( 2 )
 [connection signal="body_entered" from="." to="." method="_on_InteractionComponent_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_InteractionComponent_body_exited"]
