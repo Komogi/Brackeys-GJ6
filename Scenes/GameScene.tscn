@@ -50,5 +50,4 @@ margin_bottom = 128.0
 custom_fonts/font = SubResource( 2 )
 text = "BACK"
 script = ExtResource( 2 )
-
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="CenterContainer/VBoxContainer/Button" method="_on_Button_pressed"]

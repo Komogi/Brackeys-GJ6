@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Player/InteractionComponent.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/InteractionComponentUI.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -12,5 +14,16 @@ script = ExtResource( 1 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 2 )
 
+[node name="InteractionComponent" parent="." instance=ExtResource( 3 )]
+position = Vector2( 35, 0 )
+interaction_parent = NodePath("..")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="InteractionComponentUI" parent="." instance=ExtResource( 4 )]
+margin_left = -16.1196
+margin_top = -60.3695
+margin_right = -16.1196
+margin_bottom = -60.3695
+interaction_component_nodepath = NodePath("../InteractionComponent")
