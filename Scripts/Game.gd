@@ -2,10 +2,6 @@ extends Node2D
 
 onready var TweenNode = $Tween
 onready var MainCamera = $MainCamera
-# Declare member variables here. Examples:
-# var a: int = 2
-# var b: String = "text"
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,10 +13,22 @@ func _process(delta: float) -> void:
 
 func _on_HowToPlay_pressed() -> void:
 	TweenNode.interpolate_property(MainCamera, "position", MainCamera.position, 
-		$HowToPlayContainer.position, 0.8, Tween.TRANS_CUBIC, Tween.EASE_IN)
+		$HowToPlayContainer.position, 0.8, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
 	TweenNode.start()
 
+func _on_Settings_pressed() -> void:
+	TweenNode.interpolate_property(MainCamera, "position", MainCamera.position, 
+		$SettingsContainer.position, 0.8, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
+	TweenNode.start()
+	
+func _on_Credits_pressed() -> void:
+	TweenNode.interpolate_property(MainCamera, "position", MainCamera.position, 
+		$CreditsContainer.position, 0.8, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
+	TweenNode.start()
+	
 func _on_BackButton_pressed() -> void:
 	TweenNode.interpolate_property(MainCamera, "position", MainCamera.position, 
-		$TitleScreenContainer.position, 0.8, Tween.TRANS_CUBIC, Tween.EASE_IN)
+		$TitleScreenContainer.position, 0.8, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
 	TweenNode.start()
+
+
