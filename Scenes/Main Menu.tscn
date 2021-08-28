@@ -317,7 +317,6 @@ custom_fonts/font = SubResource( 9 )
 text = "BACK"
 
 [node name="Tween" type="Tween" parent="."]
-
 [connection signal="pressed" from="TitleScreenContainer/TitleScreen/Main Menu/Center Row/Buttons/Start" to="TitleScreenContainer/TitleScreen/Main Menu" method="_on_Start_pressed"]
 [connection signal="pressed" from="TitleScreenContainer/TitleScreen/Main Menu/Center Row/Buttons/HowToPlay" to="." method="_on_HowToPlay_pressed"]
 [connection signal="pressed" from="TitleScreenContainer/TitleScreen/Main Menu/Center Row/Buttons/Settings" to="." method="_on_Settings_pressed"]
