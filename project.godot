@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node",
-"class": "InteractableItem",
-"language": "GDScript",
-"path": "res://Interactable/InteractableItem.gd"
-}, {
 "base": "Control",
 "class": "InteractionComponentUI",
 "language": "GDScript",
@@ -25,7 +20,6 @@ _global_script_classes=[ {
 "path": "res://Player/Player.gd"
 } ]
 _global_script_class_icons={
-"InteractableItem": "",
 "InteractionComponentUI": "",
 "Player": ""
 }

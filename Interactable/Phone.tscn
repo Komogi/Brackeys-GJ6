@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Interactable/Phone.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Interactable/Phone.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Interactable/phone_icon.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.25808, 7.51476 )
+
+[node name="Phone" type="StaticBody2D"]
+scale = Vector2( 2, 2 )
+collision_layer = 9
+collision_mask = 9
+script = ExtResource( 1 )
+icon_img = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -14.9082, 39.5497 )
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
