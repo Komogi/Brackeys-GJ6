@@ -12,7 +12,7 @@ func interaction_can_interact(interactionComponentParent : Node) -> bool:
 #	pass
 
 func interaction_get_text() -> String:
-	return "Press J"
+	return "Press E"
 
 func interaction_get_texture() -> Texture:
 	return icon_img

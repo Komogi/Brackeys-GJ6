@@ -3,6 +3,7 @@ extends Area2D
 export var interaction_parent : NodePath
 
 signal on_interactable_changed(newInteractable)
+signal on_task
 
 var interaction_target : Node
 
@@ -13,6 +14,7 @@ func _process(delta):
 		# If so, we'll call interaction_interact() if our target supports it
 		if (interaction_target.has_method("interaction_interact")):
 			interaction_target.interaction_interact(self)
+			emit_signal("on_task")
 
 
 # Signal triggered when our collider collides with something on the interaction layer

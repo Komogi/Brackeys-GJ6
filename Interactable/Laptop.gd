@@ -2,6 +2,7 @@ extends StaticBody2D
 
 export var icon_img : Texture
 
+var mission = preload("res://Scenes/Mission.tscn").instance()
 var is_task := false
 
 func _process(delta):
@@ -16,14 +17,15 @@ func interaction_can_interact(interactionComponentParent : Node) -> bool:
 #	pass
 
 func interaction_get_text() -> String:
-	return "Press J"
+	return "Press E"
 
 func interaction_get_texture() -> Texture:
 	return icon_img
 	
 func interaction_interact(interactionComponentParent : Node) -> void:
 	print("Laptop touched")
-	task_success()
+	get_parent().add_child(mission)
+	task_start()
 	# Remove from interaction layer
 	# This will cause it to leave the interaction components overlap, which will hide our UI
 	# Collision_layer XOR 8 will give all current layers EXCEPT the layer with the bitwsie value 8
@@ -45,6 +47,8 @@ func task_success():
 func _on_Timer_timeout():
 	print("Laptop task failed")
 	is_task = false
+	if(get_parent().has_node("Mission")):
+		get_parent().get_node("Mission").queue_free()
 	#$task_penalty()
 	
 #Temporary function for time penalty

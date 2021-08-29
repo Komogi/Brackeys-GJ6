@@ -9,9 +9,11 @@ const FRICTION = 1000
 const INTERACT_POSITION_X = [35, 0, -35, 0]
 const INTERACT_POSITION_Y = [0, -35, 0, 35]
 var velocity = Vector2.ZERO
+#var in_task := false
 
 func _physics_process(delta):
 	var input_vector = Vector2.ZERO
+	#if(!in_task):
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	input_vector = input_vector.normalized()
@@ -35,5 +37,8 @@ func _physics_process(delta):
 
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
+	
+	#else:
+	#	pass
 	
 	velocity = move_and_slide(velocity)

@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+
+[node name="Mission" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 113.359
+margin_top = 92.084
+margin_right = 1159.36
+margin_bottom = 641.084
+color = Color( 0, 0, 0, 0.490196 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 391.71, 300.164 )
+texture = ExtResource( 1 )
