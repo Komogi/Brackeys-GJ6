@@ -3,8 +3,8 @@ class_name Player
 
 onready var interact = $InteractionComponent
 
-const ACCELERATION = 800
-const MAX_SPEED = 250
+const ACCELERATION = 1200
+const MAX_SPEED = 500
 const FRICTION = 1000
 const INTERACT_POSITION_X = [35, 0, -35, 0]
 const INTERACT_POSITION_Y = [0, -35, 0, 35]
