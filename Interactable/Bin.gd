@@ -2,10 +2,13 @@ extends StaticBody2D
 
 export var icon_img : Texture
 
+signal bin_task_complete
+
 var is_task := false
 
 func interaction_can_interact(interactionComponentParent : Node) -> bool:
 	return interactionComponentParent is Player
+	
 
 # Not implemented - we'll use the default texture instead
 #func interaction_get_texture() -> Texture:
@@ -31,12 +34,14 @@ func is_task() -> bool:
 	return is_task
 
 func task_start():
+	print("Bin task started")
 	is_task = true
 	$Timer.start()
 	
 func task_success():
 	is_task = false
-	print("Laptop task successed")
+	print("Bin task successed")
+	emit_signal("bin_task_complete")
 	
 func _on_Timer_timeout():
 	print("Bin task failed")
@@ -46,3 +51,7 @@ func _on_Timer_timeout():
 #Temporary function for time penalty
 func task_penalty():
 	$GameScreen.Timer -= 5
+
+
+func _on_TaskList_bin_task_start() -> void:
+	task_start()
