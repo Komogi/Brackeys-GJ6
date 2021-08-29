@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Tiles/FloorwallTileMap.tscn" type="PackedScene" id=2]
@@ -6,12 +6,21 @@
 [ext_resource path="res://Sprites/Tiles/ObstaclesTileMap.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/GameTime.gd" type="Script" id=5]
 [ext_resource path="res://Fonts/ThaleahFat.tres" type="DynamicFontData" id=6]
+[ext_resource path="res://Sprites/InputField_Rounded_GB.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/InputField_CC.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/TaskList.gd" type="Script" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
 outline_size = 4
 outline_color = Color( 0.27451, 0.27451, 0.368627, 1 )
 extra_spacing_char = 8
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+outline_size = 4
+outline_color = Color( 0.227451, 0.227451, 0.313726, 1 )
 font_data = ExtResource( 6 )
 
 [node name="GameScene" type="Node2D"]
@@ -68,6 +77,106 @@ __meta__ = {
 process_mode = 0
 wait_time = 0.1
 autostart = true
+
+[node name="TaskList" type="Control" parent="GUI"]
+margin_left = 64.0
+margin_top = 16.0
+margin_right = 256.0
+margin_bottom = 256.0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Task1" type="Label" parent="GUI/TaskList"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 180.0
+margin_bottom = 75.0
+custom_fonts/font = SubResource( 2 )
+text = "TASK 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Task1Timer" type="TextureProgress" parent="GUI/TaskList"]
+margin_left = 128.0
+margin_top = 24.0
+margin_right = 256.0
+margin_bottom = 40.0
+step = 0.2
+texture_under = ExtResource( 7 )
+texture_progress = ExtResource( 8 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Task2" type="Label" parent="GUI/TaskList"]
+margin_left = 16.0
+margin_top = 48.0
+margin_right = 180.0
+margin_bottom = 107.0
+custom_fonts/font = SubResource( 2 )
+text = "TASK 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Task2Timer" type="TextureProgress" parent="GUI/TaskList"]
+margin_left = 128.0
+margin_top = 56.0
+margin_right = 256.0
+margin_bottom = 72.0
+step = 0.2
+texture_under = ExtResource( 7 )
+texture_progress = ExtResource( 8 )
+nine_patch_stretch = true
+
+[node name="Task3" type="Label" parent="GUI/TaskList"]
+margin_left = 16.0
+margin_top = 80.0
+margin_right = 180.0
+margin_bottom = 139.0
+custom_fonts/font = SubResource( 2 )
+text = "TASK 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Task3Timer" type="TextureProgress" parent="GUI/TaskList"]
+margin_left = 128.0
+margin_top = 88.0
+margin_right = 256.0
+margin_bottom = 104.0
+step = 0.2
+texture_under = ExtResource( 7 )
+texture_progress = ExtResource( 8 )
+nine_patch_stretch = true
+
+[node name="Task4" type="Label" parent="GUI/TaskList"]
+margin_left = 16.0
+margin_top = 112.0
+margin_right = 180.0
+margin_bottom = 171.0
+custom_fonts/font = SubResource( 2 )
+text = "TASK 4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Task4Timer" type="TextureProgress" parent="GUI/TaskList"]
+margin_left = 128.0
+margin_top = 120.0
+margin_right = 256.0
+margin_bottom = 136.0
+step = 0.2
+texture_under = ExtResource( 7 )
+texture_progress = ExtResource( 8 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="FloorWallTileMap" parent="." instance=ExtResource( 2 )]
 tile_data = PoolIntArray( 0, 3, 0, 1, 12, 0, 2, 12, 0, 3, 12, 0, 4, 12, 0, 5, 12, 0, 6, 12, 0, 7, 12, 0, 8, 12, 0, 9, 12, 0, 10, 12, 0, 11, 12, 0, 12, 12, 0, 13, 12, 0, 14, 12, 0, 15, 12, 0, 16, 12, 0, 17, 12, 0, 18, 12, 0, 19, 7, 0, 65536, 4, 0, 65537, 13, 0, 65538, 13, 0, 65539, 13, 0, 65540, 13, 0, 65541, 13, 0, 65542, 13, 0, 65543, 13, 0, 65544, 13, 0, 65545, 13, 0, 65546, 13, 0, 65547, 13, 0, 65548, 13, 0, 65549, 13, 0, 65550, 13, 0, 65551, 13, 0, 65552, 13, 0, 65553, 13, 0, 65554, 13, 0, 65555, 8, 0, 131072, 4, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 131087, 0, 0, 131088, 0, 0, 131089, 0, 0, 131090, 0, 0, 131091, 8, 0, 196608, 4, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0, 196625, 0, 0, 196626, 0, 0, 196627, 8, 0, 262144, 4, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 0, 0, 262162, 0, 0, 262163, 8, 0, 327680, 4, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 8, 0, 393216, 4, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 8, 0, 458752, 4, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 8, 0, 524288, 4, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 8, 0, 589824, 4, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 8, 0, 655360, 3, 0, 655361, 12, 0, 655362, 12, 0, 655363, 12, 0, 655364, 12, 0, 655365, 12, 0, 655366, 12, 0, 655367, 12, 0, 655368, 12, 0, 655369, 12, 0, 655370, 12, 0, 655371, 12, 0, 655372, 12, 0, 655373, 12, 0, 655374, 12, 0, 655375, 12, 0, 655376, 12, 0, 655377, 12, 0, 655378, 12, 0, 655379, 7, 0 )
